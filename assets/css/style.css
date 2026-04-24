@@ -615,9 +615,9 @@ ul, ol { list-style: none; }
   gap: 32px;
 }
 .diff-item {
-  display: grid;
-  grid-template-columns: 3px 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .diff-item__bar {
   background: var(--unb-navy);
