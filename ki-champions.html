@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KI Champions Programm | Interne KI-Botschafter:innen aufbauen</title>
-  <meta name="description" content="Das strukturierte Ausbildungsprogramm für interne KI-Multiplikator:innen. KI-Kompetenz, die in der Organisation bleibt.">
+  <title>KI Champions Programm | Veränderung von innen | Unbuzz Consulting</title>
+  <meta name="description" content="Ein Community-basiertes Ausbildungsprogramm für interne KI-Multiplikator:innen – das nicht nur Wissen aufbaut, sondern Bewegung schafft.">
   <meta property="og:title" content="KI Champions Programm | Unbuzz Consulting">
-  <meta property="og:description" content="Das strukturierte Ausbildungsprogramm für interne KI-Multiplikator:innen. KI-Kompetenz, die in der Organisation bleibt.">
+  <meta property="og:description" content="Ein Community-basiertes Ausbildungsprogramm für interne KI-Multiplikator:innen – das nicht nur Wissen aufbaut, sondern Bewegung schafft.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://unbuzz-consulting.com/assets/img/lisa-portrait.jpg">
   <meta property="og:locale" content="de_AT">
@@ -14,14 +14,128 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://unbuzz-consulting.com/ki-champions.html">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* ── Pillar cards ── */
+    .pillar {
+      background: var(--unb-white);
+      border-radius: var(--r-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pillar__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+    .pillar__icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .pillar__label {
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pillar__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--fg-1);
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .pillar__body {
+      font-size: 0.9375rem;
+      color: var(--fg-2);
+      line-height: 1.7;
+    }
+    .pillar--skills .pillar__icon { background: rgba(68,90,121,0.09); color: var(--unb-navy); }
+    .pillar--skills .pillar__label { color: var(--unb-navy); }
+    .pillar--workshops .pillar__icon { background: rgba(68,90,121,0.06); color: var(--unb-navy); }
+    .pillar--workshops .pillar__label { color: var(--unb-navy); }
+    .pillar--community .pillar__icon { background: var(--unb-navy); color: #fff; }
+    .pillar--community .pillar__label { color: var(--unb-navy); }
+    .pillar--community { border: 2px solid var(--unb-navy); }
+
+    /* ── Bausteine ── */
+    .baustein {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border-1);
+    }
+    .baustein:last-child { border-bottom: none; }
+    .baustein__num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--unb-navy);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .baustein__title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--fg-1);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .baustein__body {
+      font-size: 0.9rem;
+      color: var(--fg-2);
+      line-height: 1.65;
+    }
+
+    /* ── Outcome list ── */
+    .outcome-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .outcome-item:last-child { border-bottom: none; }
+    .outcome-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(143,164,193,0.2);
+      border: 1px solid rgba(143,164,193,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .outcome-check svg { width: 14px; height: 14px; stroke: var(--unb-steel); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .outcome-text { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.65; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .grid-3-pillars { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="site-header__inner">
       <a href="./index.html" class="site-header__brand" aria-label="Unbuzz Consulting – Startseite">
-        <img src="./assets/img/logo.png" alt="Unbuzz Consulting Logo" >
+        <img src="./assets/img/logo.png" alt="Unbuzz Consulting Logo">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation öffnen">
         <span></span><span></span><span></span>
@@ -41,234 +155,254 @@
   <main id="main-content">
 
     <!-- HERO -->
-    <div class="page-header" style="padding-bottom:104px;">
+    <div class="page-header">
       <div class="page-header__inner">
         <span class="eyebrow eyebrow--light">Ausbildungsprogramm</span>
-        <h1 class="page-header__title">KI Champions Programm.</h1>
-        <p class="page-header__sub" style="max-width:660px;">
-          Nicht jede:r muss KI-Expert:in werden. Aber einige müssen es. Das KI Champions Programm bildet diese Menschen aus – und gibt ihnen das Werkzeug, um KI in ihrer Organisation wirklich zu verankern.
+        <h1 class="page-header__title">
+          KI Champions Programm.<br>Veränderung von innen.
+        </h1>
+        <p class="page-header__sub" style="max-width:680px;">
+          Ein Community-basiertes Ausbildungsprogramm für interne KI-Multiplikator:innen – das nicht nur Wissen aufbaut, sondern Bewegung schafft.
         </p>
         <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="#cta" class="btn btn--white btn--lg">Erstgespräch anfragen</a>
-          <a href="#struktur" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.4);">Programm ansehen</a>
+          <a href="#cta" class="btn btn--white btn--lg">Programm anfragen</a>
+          <a href="#aufbau" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.4);">Aufbau ansehen</a>
         </div>
       </div>
     </div>
 
-    <!-- BLOCK 2: DAS PROBLEM -->
-    <section class="section" aria-labelledby="problem-title">
-      <div style="max-width:880px;">
-        <span class="eyebrow">Das Problem</span>
-        <h2 class="section__title" id="problem-title">Warum ein einzelner Workshop nicht reicht.</h2>
+    <!-- WARUM DIESES PROGRAMM -->
+    <section class="section" aria-labelledby="warum-title">
+      <div style="max-width:860px;">
+        <span class="eyebrow">Warum dieses Programm?</span>
+        <h2 class="section__title" id="warum-title">Einmalige KI-Trainings vermitteln Wissen.<br>Was sie nicht schaffen: dauerhafte Veränderung.</h2>
         <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-bottom:20px;">
-          Viele Unternehmen haben schon KI-Workshops gemacht. Und sechs Monate später ist davon wenig geblieben.
+          Der Grund ist einfach: Wenn nach dem Workshop niemand im Unternehmen die Verantwortung trägt, wenn Ängste nicht adressiert werden, wenn keine internen Ansprechpersonen da sind – verpufft das Beste Training innerhalb von Wochen.
         </p>
         <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-bottom:20px;">
-          Das liegt nicht an fehlender Motivation. Es liegt daran, dass Wissen ohne Verankerung verdunstet. Wenn niemand im Unternehmen die Verantwortung für KI übernimmt – wenn keine internen Ansprechpersonen vorhanden sind, die Kolleg:innen begleiten und Fragen beantworten – dann bleibt KI ein Projekt statt einer Kompetenz.
+          Das KI Champions Programm geht einen anderen Weg. Es fördert gezielt eine Gruppe von Mitarbeitenden, die KI nicht nur verstehen – sondern aktiv in ihre Organisation tragen. Als Vordenker:innen, Begleiter:innen und Gestalter:innen des Wandels.
         </p>
-        <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;font-weight:600;color:var(--unb-navy);">
-          Und ein Projekt, das niemand besitzt, stirbt leise.
-        </p>
-        <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-top:16px;">
-          Das KI Champions Programm setzt genau da an.
+        <p style="font-size:1.125rem;font-weight:700;color:var(--unb-navy);line-height:1.5;">
+          Kein Top-down-Rollout. Sondern echter Kulturwandel von innen.
         </p>
       </div>
 
-      <!-- CONTRAST: Nicht / Sondern -->
-      <div style="margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;" class="responsive-stack-2">
-        <div style="background:var(--unb-mist);padding:40px;">
-          <div style="font-weight:800;font-size:0.6875rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:20px;">Nicht</div>
-          <p style="font-weight:700;font-size:1.25rem;line-height:1.3;color:var(--fg-3);letter-spacing:-0.01em;">Ein Workshop, der in drei Wochen vergessen ist.</p>
-          <p style="margin-top:14px;font-size:0.875rem;color:var(--fg-3);line-height:1.6;">Punktuelles Wissen ohne interne Verankerung. Niemand trägt das Thema weiter.</p>
-        </div>
-        <div style="background:var(--unb-navy);padding:40px;">
-          <div style="font-weight:800;font-size:0.6875rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:20px;">Sondern</div>
-          <p style="font-weight:700;font-size:1.25rem;line-height:1.3;color:#fff;letter-spacing:-0.01em;">KI-Kompetenz, die im Unternehmen wächst und bleibt.</p>
-          <p style="margin-top:14px;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.6;">Ausgebildete interne Champions, die das Thema tragen – unabhängig von externen Berater:innen.</p>
+    </section>
+
+    <!-- WAS EIN KI CHAMPION IST -->
+    <section class="section--soft" aria-labelledby="rolle-title">
+      <div class="section__inner">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="responsive-stack">
+          <div>
+            <span class="eyebrow">Die Rolle</span>
+            <h2 class="section__title" id="rolle-title">Ein KI Champion ist keine technische Rolle.<br>Es ist eine Haltung.</h2>
+            <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-bottom:24px;">
+              Champions sind Mitarbeitende aus unterschiedlichen dezentralen Bereichen, die den Wandel für das Thema KI in ihrer Organisation tragen. Sie werden zur Anlaufstelle für Kolleg:innen, entwickeln konkrete Anwendungsfälle für ihren Bereich und treiben den kulturellen Wandel aktiv voran.
+            </p>
+            <div style="background:rgba(68,90,121,0.08);border-left:3px solid var(--unb-navy);border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px;">
+              <p style="font-size:1rem;font-weight:700;color:var(--unb-navy);line-height:1.5;margin:0;">
+                Kein Coding. Kein IT-Hintergrund nötig.<br>Nur die Bereitschaft, Veränderung sichtbar zu machen.
+              </p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="color:var(--unb-navy);font-weight:800;flex-shrink:0;font-size:1rem;margin-top:1px;">→</span>
+                <span style="font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">Anlaufstelle für Kolleg:innen bei KI-Fragen</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="color:var(--unb-navy);font-weight:800;flex-shrink:0;font-size:1rem;margin-top:1px;">→</span>
+                <span style="font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">KI-Anwendungsfälle für den eigenen Bereich identifizieren</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="color:var(--unb-navy);font-weight:800;flex-shrink:0;font-size:1rem;margin-top:1px;">→</span>
+                <span style="font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">Zwischen Begeisterung und gesunder Skepsis vermitteln</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="color:var(--unb-navy);font-weight:800;flex-shrink:0;font-size:1rem;margin-top:1px;">→</span>
+                <span style="font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">KI-Entscheidungen im Kontext von Verantwortung und Ethik einordnen</span>
+              </div>
+            </div>
+          </div>
+          <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3;">
+            <img src="./assets/img/Champions.png" alt="KI Champions im Programm" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOCK 3: WAS EIN CHAMPION KANN -->
-    <section class="section--soft" aria-labelledby="champion-title">
+    <!-- PROGRAMMAUFBAU: DREI SÄULEN -->
+    <section class="section" id="aufbau" aria-labelledby="aufbau-title">
+      <span class="eyebrow">Programmaufbau</span>
+      <h2 class="section__title" id="aufbau-title">Drei Säulen tragen das Programm.</h2>
+      <p class="section__lead" style="max-width:680px;">Das Programm läuft über einige Monate und verbindet flexibles Online-Lernen mit echten Community-Momenten und persönlichem Netzwerk.</p>
+
+      <div style="margin-top:48px;" class="fade-in">
+        <img src="./assets/img/Konzept AI Champions (1).png" alt="3 Säulen des KI Champions Programms: Skills aufbauen, Kultur gestalten, Netzwerk" style="width:100%;max-width:860px;display:block;border-radius:12px;">
+      </div>
+    </section>
+
+    <!-- BAUSTEINE -->
+    <section class="section--soft" aria-labelledby="bausteine-title">
       <div class="section__inner">
-        <span class="eyebrow">Die Rolle</span>
-        <h2 class="section__title" id="champion-title">Was ein KI Champion kann. Und was nicht.</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;" class="responsive-stack">
+        <span class="eyebrow">Die Bausteine</span>
+        <h2 class="section__title" id="bausteine-title">Was das Programm im Detail enthält.</h2>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:40px;" class="responsive-stack">
           <div>
-            <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-bottom:20px;">
-              KI Champions sind keine Entwickler:innen. Sie müssen keine Algorithmen programmieren. Sie sind Personen in Ihrer Organisation – aus HR, Marketing, Operations, Vertrieb oder Führung – die:
-            </p>
-            <ul style="display:flex;flex-direction:column;gap:14px;">
-              <li style="display:flex;gap:12px;font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">
-                <span style="color:var(--unb-navy);font-weight:700;flex-shrink:0;">→</span>
-                KI-Tools fundiert verstehen und anwenden können
-              </li>
-              <li style="display:flex;gap:12px;font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">
-                <span style="color:var(--unb-navy);font-weight:700;flex-shrink:0;">→</span>
-                Anwendungsfälle für ihren Bereich identifizieren und einschätzen
-              </li>
-              <li style="display:flex;gap:12px;font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">
-                <span style="color:var(--unb-navy);font-weight:700;flex-shrink:0;">→</span>
-                Kolleg:innen beim Einstieg begleiten
-              </li>
-              <li style="display:flex;gap:12px;font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">
-                <span style="color:var(--unb-navy);font-weight:700;flex-shrink:0;">→</span>
-                Zwischen Begeisterung und gesunder Skepsis vermitteln
-              </li>
-              <li style="display:flex;gap:12px;font-size:0.9375rem;color:var(--fg-2);line-height:1.55;">
-                <span style="color:var(--unb-navy);font-weight:700;flex-shrink:0;">→</span>
-                KI-Entscheidungen im Kontext von Verantwortung und Ethik einordnen
-              </li>
-            </ul>
+            <div class="baustein fade-in">
+              <div class="baustein__num">1</div>
+              <div>
+                <div class="baustein__title">Webinare</div>
+                <p class="baustein__body">KI-Wissen, wann es passt. Online und flexibel – ohne Präsenzpflicht.</p>
+              </div>
+            </div>
+            <div class="baustein fade-in">
+              <div class="baustein__num">2</div>
+              <div>
+                <div class="baustein__title">KI Workshops</div>
+                <p class="baustein__body">Use Cases entwickeln, Prompting üben, Anwendung erleben. Hands-on und praxisnah.</p>
+              </div>
+            </div>
+            <div class="baustein fade-in">
+              <div class="baustein__num">3</div>
+              <div>
+                <div class="baustein__title">Community Update Calls</div>
+                <p class="baustein__body">Monatlich: Was hat sich in der KI-Welt getan? Was läuft intern? Champions bleiben am Puls der Entwicklung.</p>
+              </div>
+            </div>
           </div>
           <div>
-            <div class="card" style="height:100%;justify-content:center;">
-              <p style="font-weight:800;font-size:1.5rem;color:var(--unb-navy);line-height:1.2;letter-spacing:-0.015em;margin-bottom:16px;">
-                „Sie werden die Person, zu der alle kommen, wenn es um KI geht."
-              </p>
-              <p style="font-size:0.9375rem;color:var(--fg-2);line-height:1.65;">
-                Intern verankert. Praxisnah ausgebildet. Mit echtem Verständnis für Technologie und Kultur.
-              </p>
+            <div class="baustein fade-in">
+              <div class="baustein__num">4</div>
+              <div>
+                <div class="baustein__title">Monthly Task</div>
+                <p class="baustein__body">Eine kleine Aufgabe pro Monat, die Champions mit ihrem Team umsetzen. Hält die Energie hoch und sorgt für Transfer in den Alltag.</p>
+              </div>
+            </div>
+            <div class="baustein fade-in">
+              <div class="baustein__num">5</div>
+              <div>
+                <div class="baustein__title">Community Events</div>
+                <p class="baustein__body">Inhalt und Vernetzung. Persönliche Verbindung unter den Champions – weil gemeinsame Energie Veränderung trägt.</p>
+              </div>
+            </div>
+            <div class="baustein fade-in" style="border-bottom:none;">
+              <div class="baustein__num" style="background:var(--fg-1);">6</div>
+              <div>
+                <div class="baustein__title">Case Präsentationen</div>
+                <p class="baustein__body">Am Abschluss präsentiert jede:r Champion die eigene Maßnahme zur KI-Integration. Sichtbarkeit für die Arbeit, die geleistet wurde.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOCK 4: PROGRAMMSTRUKTUR -->
-    <section class="section" id="struktur" aria-labelledby="struktur-title">
-      <span class="eyebrow">Programmstruktur</span>
-      <h2 class="section__title" id="struktur-title">Wie das Programm aufgebaut ist.</h2>
-      <p class="section__lead">5 Module über 3–6 Monate. Für 5–15 Teilnehmende. Inhouse durchgeführt, auf Ihre Branche und Ausgangslage angepasst.</p>
-
-      <div role="list">
-        <div class="module fade-in" role="listitem">
-          <div class="module__num" aria-hidden="true">1</div>
-          <div>
-            <div class="module__label">Modul 1</div>
-            <h3 class="module__title">KI verstehen</h3>
-            <p class="module__body">Grundlagen, Technologieverständnis, kritische Einordnung. Wie funktioniert KI? Was sind Large Language Models – was können sie, was können sie nicht? Welche Systeme sind für Ihren Kontext relevant? Kein Technik-Studium. Aber echtes Verständnis.</p>
-          </div>
-        </div>
-
-        <div class="module fade-in" role="listitem">
-          <div class="module__num" aria-hidden="true">2</div>
-          <div>
-            <div class="module__label">Modul 2</div>
-            <h3 class="module__title">KI anwenden</h3>
-            <p class="module__body">Tools, Prompt Engineering, praktische Übungen. Wir arbeiten mit aktuellen KI-Tools, entwickeln Prompts, die wirklich funktionieren, und testen Anwendungsfälle aus Ihrem Unternehmen. Praxis zuerst.</p>
-          </div>
-        </div>
-
-        <div class="module fade-in" role="listitem">
-          <div class="module__num" aria-hidden="true">3</div>
-          <div>
-            <div class="module__label">Modul 3</div>
-            <h3 class="module__title">Use Cases entwickeln</h3>
-            <p class="module__body">Von der Idee zur konkreten Anwendung. Teilnehmende identifizieren KI-Möglichkeiten in ihrem eigenen Aufgabenbereich, bewerten den Nutzen und entwickeln erste Umsetzungsideen. Methodik wird mitgegeben.</p>
-          </div>
-        </div>
-
-        <div class="module fade-in" role="listitem">
-          <div class="module__num" aria-hidden="true">4</div>
-          <div>
-            <div class="module__label">Modul 4</div>
-            <h3 class="module__title">KI im Organisationskontext</h3>
-            <p class="module__body">Governance, Verantwortung, kultureller Wandel. Wie führe ich KI-Entscheidungen verantwortungsvoll? Welche Fragen zu Datenschutz, Ethik und Transparenz müssen beantwortet werden? Wie erkläre ich KI meinen Kolleg:innen – ehrlich und ohne Überforderung?</p>
-          </div>
-        </div>
-
-        <div class="module fade-in" role="listitem">
-          <div class="module__num" aria-hidden="true">5</div>
-          <div>
-            <div class="module__label">Modul 5</div>
-            <h3 class="module__title">Die Champions-Rolle</h3>
-            <p class="module__body">Multiplikator:innen-Aufgabe, interne Kommunikation, nächste Schritte. Wie übernimmt man diese Rolle wirklich? Was brauchen Champions, um wirksam zu sein? Transfer in den Alltag.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Optional -->
-      <div class="card card--mist fade-in" style="margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;">
-        <div style="background:var(--unb-navy);color:#fff;font-weight:900;font-size:1.125rem;width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</div>
+    <!-- FÜR WEN -->
+    <section class="section" aria-labelledby="fuerwen-title">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="responsive-stack">
         <div>
-          <h3 style="font-weight:800;font-size:1rem;color:var(--fg-1);margin-bottom:8px;letter-spacing:-0.01em;">Optional: Begleitung nach dem Programm</h3>
-          <p style="font-size:0.9375rem;color:var(--fg-2);line-height:1.65;">Für Organisationen, die nach Abschluss eine fortlaufende Begleitung wünschen – bei neuen Entwicklungen, aufkommenden Fragen oder der nächsten Stufe.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOCK 5: FÜR WEN -->
-    <section class="section--soft" aria-labelledby="fuerwen-title">
-      <div class="section__inner">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;" class="responsive-stack">
-          <div>
-            <span class="eyebrow">Passt das zu Ihnen?</span>
-            <h2 class="section__title" id="fuerwen-title">Das Programm passt zu Ihnen, wenn&hellip;</h2>
-            <p style="font-size:1.0625rem;color:var(--fg-2);line-height:1.75;margin-bottom:20px;">
-              Sie in einem mittelständischen oder größeren Unternehmen arbeiten, KI nicht nur als Projekt einführen wollen, sondern intern verankern – und Mitarbeitende haben, die bereit sind, diese Rolle zu tragen.
-            </p>
-            <a href="./kontakt.html?format=champions" class="btn btn--primary">Erstgespräch anfragen</a>
-          </div>
-          <div>
-            <div class="card" style="border-left:3px solid var(--unb-navy);border-radius:0 12px 12px 0;">
-              <h3 style="font-weight:800;font-size:1rem;color:var(--fg-3);margin-bottom:12px;letter-spacing:-0.01em;">Das Programm passt nicht, wenn&hellip;</h3>
-              <p style="font-size:0.9375rem;color:var(--fg-3);line-height:1.65;">
-                Sie kurzfristig ein Tool einführen möchten und jemanden suchen, der das umsetzt. Dafür gibt es andere Angebote – und ich sage Ihnen ehrlich, wenn das sinnvoller ist.
-              </p>
-              <a href="./formate.html" class="card__link" style="margin-top:16px;">Andere Formate ansehen →</a>
+          <span class="eyebrow">Für wen</span>
+          <h2 class="section__title" id="fuerwen-title">Das Programm passt zu Ihnen, wenn&hellip;</h2>
+          <div style="display:flex;flex-direction:column;gap:20px;margin-top:8px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine Fokusgruppe im Unternehmen haben, die KI aktiv mitgestalten will – und die Sichtbarkeit und Ausbildung verdient.</p>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine KI-Einführung planen, die nicht als IT-Projekt scheitert, sondern als kultureller Wandel gelingt.</p>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie wissen, dass nachhaltige Veränderung nicht von oben verordnet werden kann – sondern von Menschen getragen werden muss.</p>
             </div>
           </div>
+          <div style="margin-top:36px;">
+            <a href="./kontakt.html?format=champions" class="btn btn--primary btn--lg">Programm anfragen</a>
+          </div>
+        </div>
+        <div>
+          <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3;">
+            <img src="./assets/img/Champions2.png" alt="KI Champions Community" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOCK 6: ERGEBNIS -->
+    <!-- WAS AM ENDE STEHT -->
     <section class="section--dark" aria-labelledby="ergebnis-title">
       <div class="section__inner">
-        <span class="eyebrow eyebrow--light">Am Ende des Programms</span>
-        <h2 class="section__title section__title--light" id="ergebnis-title">Was am Ende des Programms steht.</h2>
-        <div class="grid-4" style="margin-top:48px;">
-          <div class="card fade-in" style="background:rgba(255,255,255,0.08);box-shadow:none;border:1px solid rgba(255,255,255,0.12);">
-            <div class="card__num" style="color:var(--unb-steel);">5–15</div>
-            <h3 class="card__title" style="color:#fff;">ausgebildete KI Champions</h3>
-            <p class="card__body" style="color:rgba(255,255,255,0.7);">Die wissen, was KI kann und was nicht. Die als interne Ansprechpersonen wirksam sind.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;" class="responsive-stack">
+          <div>
+            <span class="eyebrow eyebrow--light">Am Ende des Programms</span>
+            <h2 class="section__title section__title--light" id="ergebnis-title" style="font-size:clamp(1.75rem,3vw,2.5rem);">
+              Kein Zertifikat, das in der Schublade landet.
+            </h2>
+            <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:32px;">
+              Sondern ein unternehmensweites Netzwerk an KI-Multiplikator:innen, das eigenständig wirksam ist.
+            </p>
+            <div>
+              <div class="outcome-item">
+                <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <p class="outcome-text">Widerstände und Ängste im Team kennt und aktiv adressieren kann.</p>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <p class="outcome-text">Konkrete KI-Anwendungsfälle für den eigenen Bereich entwickelt hat.</p>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <p class="outcome-text">KI-Themen eigenständig weiterträgt – ohne externe Begleitung.</p>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <p class="outcome-text">Den kulturellen Wandel von innen treibt, statt auf Top-down-Initiativen zu warten.</p>
+              </div>
+            </div>
           </div>
-          <div class="card fade-in" style="background:rgba(255,255,255,0.08);box-shadow:none;border:1px solid rgba(255,255,255,0.12);">
-            <div class="card__num" style="color:var(--unb-steel);">→</div>
-            <h3 class="card__title" style="color:#fff;">Eigene Use Cases</h3>
-            <p class="card__body" style="color:rgba(255,255,255,0.7);">Anwendungsfälle, die Ihre Champions selbst für das Unternehmen entwickeln können.</p>
-          </div>
-          <div class="card fade-in" style="background:rgba(255,255,255,0.08);box-shadow:none;border:1px solid rgba(255,255,255,0.12);">
-            <div class="card__num" style="color:var(--unb-steel);">↔</div>
-            <h3 class="card__title" style="color:#fff;">Verantwortungsvoller Einsatz</h3>
-            <p class="card__body" style="color:rgba(255,255,255,0.7);">KI kritisch und ethisch fundiert einsetzen – nicht blind, nicht ängstlich.</p>
-          </div>
-          <div class="card fade-in" style="background:rgba(255,255,255,0.08);box-shadow:none;border:1px solid rgba(255,255,255,0.12);">
-            <div class="card__num" style="color:var(--unb-steel);">↑</div>
-            <h3 class="card__title" style="color:#fff;">Ein Fundament, das bleibt</h3>
-            <p class="card__body" style="color:rgba(255,255,255,0.7);">Nicht abhängig von externen Berater:innen, die wiederkommen müssen.</p>
+          <div>
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:36px;">
+              <div style="font-size:0.6875rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:20px;">Win-Win</div>
+              <p style="font-size:1.0625rem;font-weight:700;color:#fff;line-height:1.4;margin-bottom:16px;letter-spacing:-0.01em;">
+                Sichtbarkeit und echte Weiterbildung für eine engagierte Fokusgruppe.
+              </p>
+              <p style="font-size:0.9375rem;color:rgba(255,255,255,0.68);line-height:1.7;margin-bottom:24px;">
+                Und intern: mehr Motivation, mehr Kompetenz, mehr Bewegung im gesamten Unternehmen.
+              </p>
+              <div style="display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:var(--unb-steel);flex-shrink:0;"></div>
+                  <span style="font-size:0.875rem;color:rgba(255,255,255,0.75);font-weight:600;">Für Mitarbeitende: Sichtbarkeit &amp; Kompetenz</span>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:var(--unb-steel);flex-shrink:0;"></div>
+                  <span style="font-size:0.875rem;color:rgba(255,255,255,0.75);font-weight:600;">Für Führungskräfte: Kulturwandel ohne Druck</span>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:var(--unb-steel);flex-shrink:0;"></div>
+                  <span style="font-size:0.875rem;color:rgba(255,255,255,0.75);font-weight:600;">Für die Organisation: nachhaltige KI-Kompetenz</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLOCK 7: CTA -->
+    <!-- CTA -->
     <section class="cta-banner" id="cta" aria-labelledby="champions-cta-title">
       <div class="cta-banner__inner">
-        <span class="eyebrow eyebrow--light" style="text-align:center;display:block;">Klingt das nach dem, was Sie suchen?</span>
-        <h2 class="cta-banner__title" id="champions-cta-title">Das Programm wird individuell abgestimmt.</h2>
-        <p class="cta-banner__text">Wenn Sie wissen wollen, ob und wie das bei Ihnen funktioniert – sprechen wir. Kein Standard-Pitch. Ein ehrliches Erstgespräch.</p>
+        <h2 class="cta-banner__title" id="champions-cta-title">Bereit, Change Maker auszubilden?</h2>
+        <p class="cta-banner__text">Das KI Champions Programm wird auf Ihre Organisation abgestimmt. Sprechen wir darüber, ob und wie es bei Ihnen funktioniert.</p>
         <div class="cta-banner__ctas">
-          <a href="./kontakt.html?format=champions" class="btn btn--white btn--lg">Erstgespräch anfragen</a>
+          <a href="./kontakt.html?format=champions" class="btn btn--white btn--lg">Programm anfragen</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="site-footer__inner">
       <div>
@@ -324,7 +458,7 @@
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
