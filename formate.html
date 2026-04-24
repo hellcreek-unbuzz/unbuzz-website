@@ -8,16 +8,281 @@
   <meta property="og:title" content="KI-Workshops, Trainings &amp; Seminare | Unbuzz Consulting">
   <meta property="og:description" content="Maßgeschneiderte KI-Formate für Teams und Führungskräfte. Von Impulsvortrag bis mehrteiliger Ausbildung. Ohne Buzzwords, mit konkreten Ergebnissen.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unbuzz-consulting.com/assets/img/lisa-portrait.jpg">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="Unbuzz Consulting">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://unbuzz-consulting.com/formate.html">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* ── Format navigation bar ── */
+    .fmtnav {
+      background: var(--unb-white);
+      border-bottom: 1px solid var(--border-1);
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 48px;
+    }
+    .fmtnav::-webkit-scrollbar { display: none; }
+    .fmtnav a {
+      flex-shrink: 0;
+      padding: 18px 18px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--fg-3);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 150ms, border-color 150ms;
+      white-space: nowrap;
+    }
+    .fmtnav a:hover { color: var(--fg-1); border-bottom-color: var(--unb-navy); }
+
+    /* ── Generic format section wrapper ── */
+    .fmt { padding: 80px 48px; }
+    .fmt--mist { background: var(--unb-mist); }
+    .fmt__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* ── Image box ── */
+    .fmt__img {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--border-1);
+    }
+    .fmt__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .fmt__img--ph {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 32px;
+      text-align: center;
+    }
+    .fmt__img--ph svg { opacity: 0.22; }
+    .fmt__img--ph span {
+      font-size: 0.8rem;
+      color: var(--fg-3);
+      line-height: 1.55;
+    }
+
+    /* ── Format content ── */
+    .fmt__num {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-4);
+      margin-bottom: 18px;
+    }
+    .fmt__num-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--unb-navy);
+      color: #fff;
+      font-size: 0.625rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0;
+    }
+    .fmt__tag {
+      display: inline-block;
+      background: rgba(68,90,121,0.10);
+      color: var(--unb-navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+    .fmt__h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--fg-1);
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+    .fmt__meta { font-size: 0.8125rem; color: var(--fg-3); font-weight: 600; margin-bottom: 6px; }
+    .fmt__for  { font-size: 0.875rem; color: var(--unb-navy); font-weight: 600; margin-bottom: 22px; }
+    .fmt__body { font-size: 0.9375rem; color: var(--fg-2); line-height: 1.75; margin-bottom: 22px; }
+
+    .fmt__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .fmt__chips span {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border-1);
+      color: var(--fg-2);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .fmt--mist .fmt__chips span { background: rgba(255,255,255,0.55); }
+
+    .fmt__result {
+      border-left: 3px solid var(--unb-navy);
+      padding: 14px 18px;
+      background: rgba(68,90,121,0.06);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 28px;
+    }
+    .fmt__result strong {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--unb-navy);
+      margin-bottom: 6px;
+    }
+    .fmt__result p { margin: 0; font-size: 0.9375rem; color: var(--fg-2); line-height: 1.65; }
+
+    /* ── Keynotes dark section ── */
+    .keynote-dark {
+      background: var(--fg-1);
+      padding: 80px 48px;
+    }
+    .keynote-dark__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .keynote-dark__img {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .keynote-dark__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+    .keynote-chip {
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+    .cred-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .cred-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .cred-label {
+      font-weight: 800;
+      font-size: 0.625rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--unb-steel);
+      flex-shrink: 0;
+      width: 100px;
+    }
+    .cred-value { font-size: 0.9375rem; font-weight: 600; color: #fff; }
+
+    /* ── Quote with image background ── */
+    .quote-visual {
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .quote-visual__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .quote-visual__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+    .quote-visual__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(10,16,40,0.91) 50%, rgba(10,16,40,0.55));
+    }
+    .quote-visual__inner {
+      position: relative;
+      z-index: 2;
+      padding: 80px 48px;
+      max-width: 720px;
+    }
+    .quote-visual blockquote { margin: 0; }
+    .quote-visual__text {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .quote-visual__author {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── Fade-in ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 500ms ease, transform 500ms ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .fmt, .keynote-dark { padding: 56px 24px; }
+      .fmtnav { padding: 0 24px; }
+      .fmt__inner,
+      .keynote-dark__inner { grid-template-columns: 1fr; gap: 32px; }
+      .quote-visual__inner { padding: 56px 24px; max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="site-header__inner">
       <a href="./index.html" class="site-header__brand" aria-label="Unbuzz Consulting – Startseite">
-        <img src="./assets/img/logo.png" alt="Unbuzz Consulting Logo" >
+        <img src="./assets/img/logo.png" alt="Unbuzz Consulting Logo">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation öffnen">
         <span></span><span></span><span></span>
@@ -36,209 +301,247 @@
 
   <main id="main-content">
 
-    <!-- PAGE HEADER -->
-    <div class="page-header">
+    <!-- PAGE HEADER – kompakt -->
+    <div class="page-header" style="padding-bottom:0;">
       <div class="page-header__inner">
         <span class="eyebrow eyebrow--light">Formate</span>
-        <h1 class="page-header__title">Formate für jeden Stand.<br>Vom ersten Überblick bis zur tiefen Auseinandersetzung.</h1>
-        <p class="page-header__sub">In einer Welt, die sich so schnell verändert, müssen Organisationen KI nicht nur kennen – sie müssen wissen, was sie damit machen. Meine Formate sind darauf ausgelegt, dass am Ende jemand weiß, was als nächstes zu tun ist.</p>
+        <h1 class="page-header__title" style="font-size:clamp(2rem,4vw,3rem);max-width:680px;">
+          Vom Impulsvortrag bis zur tiefen Auseinandersetzung.
+        </h1>
       </div>
     </div>
 
-    <!-- FORMAT 1: IMPULSVORTRAG / KEYNOTE INHOUSE -->
-    <section class="section" aria-labelledby="format-1-title">
-      <div class="format-block fade-in">
-        <div class="format-block__header">
-          <div>
-            <div class="format-block__meta">½–1 Tag · Inhouse oder auf Ihrer Veranstaltung</div>
-            <h2 class="format-block__title" id="format-1-title">KI verstehen.<br>In einem Raum. Mit Ihrem Team.</h2>
-            <p class="format-block__for">Für: Führungskräfte, Geschäftsleitung, gemischte Teams</p>
+    <!-- FORMAT NAVIGATION -->
+    <nav class="fmtnav" aria-label="Format-Navigation">
+      <a href="#impulsvortrag">KI-Impulsvortrag</a>
+      <a href="#workshop">Grundlagenworkshop</a>
+      <a href="#leadership">Leadership Seminar</a>
+      <a href="#usecase">Use Case Workshop</a>
+      <a href="#ausbildung">KI-Ausbildung</a>
+      <a href="#keynotes">Externe Keynotes</a>
+    </nav>
+
+    <!-- ── FORMAT 1: Impulsvortrag ── -->
+    <section class="fmt fade-in" id="impulsvortrag" aria-labelledby="f1-title">
+      <div class="fmt__inner">
+        <div class="fmt__img">
+          <img src="./assets/img/Keynote.png" alt="Lisa Höllbacher beim KI-Impulsvortrag" loading="lazy">
+        </div>
+        <div>
+          <div class="fmt__num">
+            <span class="fmt__num-badge">01</span>
+            KI-Impulsvortrag
           </div>
-          <div class="card__label" style="flex-shrink:0;">KI-Impulsvortrag</div>
+          <div class="fmt__tag">½–1 Tag · Inhouse oder auf Ihrer Veranstaltung</div>
+          <h2 class="fmt__h2" id="f1-title">KI verstehen.<br>In einem Raum. Mit Ihrem Team.</h2>
+          <p class="fmt__for">Für: Führungskräfte, Geschäftsleitung, gemischte Teams</p>
+          <p class="fmt__body">
+            Ein strukturierter Vortrag mit Diskussion. Ich bringe das Thema KI auf den Boden: Was kann sie, was kann sie nicht, was bedeutet das für Ihr Unternehmen und Ihre Branche? Kein Hype, keine Angstmacherei. Fragen erwünscht.
+          </p>
+          <div class="fmt__chips">
+            <span>KI als kultureller Wandel</span>
+            <span>Führen im KI-Zeitalter</span>
+            <span>KI und Unternehmenskultur</span>
+            <span>Mythen und Realitäten</span>
+          </div>
+          <div class="fmt__result">
+            <strong>Ergebnis</strong>
+            <p>Ihr Team verlässt die Veranstaltung mit einem realistischen Bild – und konkreten Fragen für die nächsten Schritte.</p>
+          </div>
+          <a href="./kontakt.html?format=impulsvortrag" class="btn btn--primary">Format anfragen</a>
         </div>
-        <p class="format-block__body">
-          Ein strukturierter Vortrag mit Diskussion. Ich bringe das Thema KI auf den Boden: Was kann sie, was kann sie nicht, was bedeutet das für Ihr Unternehmen und Ihre Branche? Kein Hype, keine Angstmacherei. Fragen erwünscht.
-        </p>
-        <p style="font-weight:700;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px;">Themenbeispiele</p>
-        <ul class="format-block__list">
-          <li>KI als kultureller Wandel – warum es kein IT-Projekt ist</li>
-          <li>Führen im KI-Zeitalter: Was sich ändert, was bleibt</li>
-          <li>KI und Unternehmenskultur: Der Mensch im Mittelpunkt</li>
-          <li>Mythen und Realitäten – was KI wirklich kann</li>
-        </ul>
-        <div class="format-block__result">
-          <strong>Ergebnis</strong>
-          Ihr Team verlässt die Veranstaltung mit einem realistischen Bild – und konkreten Fragen für die nächsten Schritte.
-        </div>
-        <a href="./kontakt.html?format=impulsvortrag" class="btn btn--primary">Format anfragen</a>
       </div>
     </section>
 
-    <!-- FORMAT 2: GRUNDLAGENWORKSHOP -->
-    <section class="section" style="padding-top:0;" aria-labelledby="format-2-title">
-      <div class="format-block fade-in" style="background:var(--unb-mist);box-shadow:none;">
-        <div class="format-block__header">
-          <div>
-            <div class="format-block__meta">1 Tag · Inhouse · bis 15 Personen</div>
-            <h2 class="format-block__title" id="format-2-title">KI anwenden.<br>Nicht nur kennen.</h2>
-            <p class="format-block__for">Für: Teams und Führungskräfte, die KI im Arbeitsalltag einsetzen wollen</p>
+    <!-- ── FORMAT 2: Grundlagenworkshop ── -->
+    <section class="fmt fmt--mist fade-in" id="workshop" aria-labelledby="f2-title">
+      <div class="fmt__inner">
+        <div>
+          <div class="fmt__num">
+            <span class="fmt__num-badge">02</span>
+            Grundlagenworkshop
           </div>
-          <div class="card__label" style="flex-shrink:0;">Grundlagenworkshop</div>
+          <div class="fmt__tag">1 Tag · Inhouse · bis 15 Personen</div>
+          <h2 class="fmt__h2" id="f2-title">KI anwenden.<br>Nicht nur kennen.</h2>
+          <p class="fmt__for">Für: Teams und Führungskräfte, die KI im Arbeitsalltag einsetzen wollen</p>
+          <p class="fmt__body">
+            Ein ganztägiger Workshop mit praktischen Übungen. Wir arbeiten mit realen Tools, testen Anwendungsfälle aus Ihrer Branche und ordnen ehrlich ein, wo KI hilft – und wo nicht. Keine Powerpoint-Überforderung.
+          </p>
+          <div class="fmt__chips">
+            <span>Wie funktioniert KI?</span>
+            <span>Prompt Engineering</span>
+            <span>Use Case Entwicklung</span>
+            <span>Grenzen &amp; Risiken</span>
+          </div>
+          <div class="fmt__result">
+            <strong>Ergebnis</strong>
+            <p>Teilnehmende können erste eigene Anwendungsfälle entwickeln – mit einem realistischen Bild davon, was KI kann und was nicht.</p>
+          </div>
+          <a href="./kontakt.html?format=workshop" class="btn btn--primary">Workshop anfragen</a>
         </div>
-        <p class="format-block__body">
-          Ein ganztägiger Workshop mit praktischen Übungen. Wir arbeiten mit realen Tools, testen Anwendungsfälle aus Ihrer Branche und ordnen ehrlich ein, wo KI hilft – und wo nicht. Keine Powerpoint-Überforderung.
-        </p>
-        <p style="font-weight:700;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px;">Schwerpunkte</p>
-        <ul class="format-block__list">
-          <li>Wie funktioniert KI? Was unterscheidet verschiedene Systeme?</li>
-          <li>Prompt Engineering: Wie kommuniziere ich effektiv mit KI?</li>
-          <li>Use Case Entwicklung: Wo bringt KI in unserem Kontext echten Mehrwert?</li>
-          <li>Kritische Einordnung: Grenzen, Risiken, rechtliche Fragen</li>
-        </ul>
-        <div class="format-block__result">
-          <strong>Ergebnis</strong>
-          Teilnehmende haben ein realistisches Bild von KI und können erste eigene Anwendungsfälle entwickeln.
+        <div class="fmt__img">
+          <img src="./assets/img/Workshop.png" alt="KI-Grundlagenworkshop in der Praxis" loading="lazy">
         </div>
-        <a href="./kontakt.html?format=workshop" class="btn btn--primary">Workshop anfragen</a>
       </div>
     </section>
 
-    <!-- FORMAT 3: LEADERSHIP SEMINAR -->
-    <section class="section" style="padding-top:0;" aria-labelledby="format-3-title">
-      <div class="format-block fade-in">
-        <div class="format-block__header">
-          <div>
-            <div class="format-block__meta">1–2 Tage · Inhouse · Führungskräfte</div>
-            <h2 class="format-block__title" id="format-3-title">KI führen.<br>Nicht nur verwalten.</h2>
-            <p class="format-block__for">Für: Middle Management und Senior Leadership</p>
+    <!-- ── FORMAT 3: Leadership Seminar ── -->
+    <section class="fmt fade-in" id="leadership" aria-labelledby="f3-title">
+      <div class="fmt__inner">
+        <div class="fmt__img">
+          <img src="./assets/img/Thomsen Photography-01. Oktober 2024-15.jpg" alt="Lisa Höllbacher im Gespräch mit Führungskräften" loading="lazy">
+        </div>
+        <div>
+          <div class="fmt__num">
+            <span class="fmt__num-badge">03</span>
+            Leadership Seminar
           </div>
-          <div class="card__label" style="flex-shrink:0;">Leadership Seminar</div>
+          <div class="fmt__tag">1–2 Tage · Inhouse · Führungskräfte</div>
+          <h2 class="fmt__h2" id="f3-title">KI führen.<br>Nicht nur verwalten.</h2>
+          <p class="fmt__for">Für: Middle Management und Senior Leadership</p>
+          <p class="fmt__body">
+            Ein intensives Seminar, das die Führungsperspektive ins Zentrum stellt. Wie verändert KI Führungsarbeit? Wie entscheide ich, was mein Team mit KI tun darf – und was nicht? Wie bleibe ich handlungsfähig, wenn sich das Feld laufend ändert?
+          </p>
+          <div class="fmt__chips">
+            <span>KI und Führungsrolle</span>
+            <span>Entscheidungsrahmen</span>
+            <span>Kommunikation im Team</span>
+            <span>Governance &amp; Ethik</span>
+          </div>
+          <div class="fmt__result">
+            <strong>Ergebnis</strong>
+            <p>Führungskräfte treffen KI-Entscheidungen in ihrem Bereich fundiert und selbstbewusst.</p>
+          </div>
+          <a href="./kontakt.html?format=leadership" class="btn btn--primary">Seminar anfragen</a>
         </div>
-        <p class="format-block__body">
-          Ein intensives Seminar, das die Führungsperspektive ins Zentrum stellt. Wie verändert KI Führungsarbeit? Wie entscheide ich, was mein Team mit KI tun darf – und was nicht? Wie bleibe ich handlungsfähig, wenn sich das Feld laufend ändert?
-        </p>
-        <p style="font-weight:700;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px;">Schwerpunkte</p>
-        <ul class="format-block__list">
-          <li>KI und Führungsrolle: Was ändert sich konkret?</li>
-          <li>Entscheidungsrahmen für KI-Einführung im Team</li>
-          <li>Kommunikation mit Mitarbeitenden – ehrlich und klar</li>
-          <li>Verantwortung, Governance, ethische Fragen</li>
-        </ul>
-        <div class="format-block__result">
-          <strong>Ergebnis</strong>
-          Führungskräfte können KI-Entscheidungen in ihrem Bereich fundiert und selbstbewusst treffen.
-        </div>
-        <a href="./kontakt.html?format=leadership" class="btn btn--primary">Seminar anfragen</a>
       </div>
     </section>
 
-    <!-- FORMAT 4: USE CASE WORKSHOP -->
-    <section class="section" style="padding-top:0;" aria-labelledby="format-4-title">
-      <div class="format-block fade-in" style="background:var(--unb-mist);box-shadow:none;">
-        <div class="format-block__header">
-          <div>
-            <div class="format-block__meta">Onsite · Kleingruppen</div>
-            <h2 class="format-block__title" id="format-4-title">KI-Mehrwert entdecken.</h2>
-            <p class="format-block__for">Für: Unternehmen, die die richtigen KI Use Cases identifizieren möchten</p>
+    <!-- ── FORMAT 4: Use Case Workshop ── -->
+    <section class="fmt fmt--mist fade-in" id="usecase" aria-labelledby="f4-title">
+      <div class="fmt__inner">
+        <div>
+          <div class="fmt__num">
+            <span class="fmt__num-badge">04</span>
+            Use Case Workshop
           </div>
-          <div class="card__label" style="flex-shrink:0;">Use Case Workshop</div>
+          <div class="fmt__tag">1 Tag · Onsite · Kleingruppen</div>
+          <h2 class="fmt__h2" id="f4-title">KI-Mehrwert<br>konkret entdecken.</h2>
+          <p class="fmt__for">Für: Unternehmen, die die richtigen KI-Anwendungen identifizieren möchten</p>
+          <p class="fmt__body">
+            Ein strukturierter Workshoptag, der geeignete KI-Anwendungen im eigenen Unternehmen sichtbar macht. Der Output kann direkt für eine KI-Roadmap verwendet werden – konkret, priorisiert, auf Ihren Kontext zugeschnitten.
+          </p>
+          <div class="fmt__chips">
+            <span>Bestandsaufnahme</span>
+            <span>Use Case Screening</span>
+            <span>Aufwand-Nutzen-Bewertung</span>
+            <span>Priorisierte Roadmap</span>
+          </div>
+          <div class="fmt__result">
+            <strong>Ergebnis</strong>
+            <p>KI-Use Cases, die echten Mehrwert bringen – strukturiert und direkt umsetzbar.</p>
+          </div>
+          <a href="./kontakt.html?format=usecase" class="btn btn--primary">Use Case Workshop anfragen</a>
         </div>
-        <p class="format-block__body">
-          Ein Eintagesworkshop, der geeignete KI-Anwendungen im eigenen Unternehmen identifiziert. Der Output kann direkt für eine KI-Pipeline verwendet werden – konkret, priorisiert, auf Ihren Kontext zugeschnitten.
-        </p>
-        <p style="font-weight:700;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px;">Mögliche Bestandteile</p>
-        <ul class="format-block__list">
-          <li>Bestandsaufnahme: Wo entstehen heute Reibungsverluste?</li>
-          <li>Use Case Screening: Welche Aufgaben sind für KI geeignet?</li>
-          <li>Bewertung nach Aufwand, Nutzen und Umsetzbarkeit</li>
-          <li>Priorisierte Roadmap für die nächsten Schritte</li>
-        </ul>
-        <div class="format-block__result">
-          <strong>Ergebnis</strong>
-          KI-Use Cases, die echten Mehrwert bringen – strukturiert und direkt umsetzbar.
+        <div class="fmt__img">
+          <img src="./assets/img/Strategie.png" alt="KI Use Case Analyse und Strategie" loading="lazy">
         </div>
-        <a href="./kontakt.html?format=usecase" class="btn btn--primary">Use Case Workshop anfragen</a>
       </div>
     </section>
 
-    <!-- FORMAT 5: AUSBILDUNG -->
-    <section class="section" style="padding-top:0;" aria-labelledby="format-5-title">
-      <div class="format-block fade-in">
-        <div class="format-block__header">
-          <div>
-            <div class="format-block__meta">Mehrere Module · Inhouse oder hybrid · über Monate</div>
-            <h2 class="format-block__title" id="format-5-title">Tiefes Wissen.<br>Nachhaltig aufgebaut.</h2>
-            <p class="format-block__for">Für: Unternehmen, die KI-Kompetenz strukturiert und dauerhaft aufbauen wollen</p>
+    <!-- ── FORMAT 5: KI-Ausbildung ── -->
+    <section class="fmt fade-in" id="ausbildung" aria-labelledby="f5-title">
+      <div class="fmt__inner">
+        <!-- Platzhalter: Foto eines mehrteiligen Lernformats, z.B. Gruppe beim gemeinsamen Arbeiten über mehrere Sessions.
+             Empfehlung: Ein Gruppenshot aus einem Ausbildungskurs, oder Lisa mit einer lernenden Gruppe – zeigt Kontinuität und Tiefe. -->
+        <div class="fmt__img fmt__img--ph">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--unb-navy)" stroke-width="1.2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Empfehlung: Foto aus einem<br>mehrteiligen Ausbildungsformat</span>
+        </div>
+        <div>
+          <div class="fmt__num">
+            <span class="fmt__num-badge">05</span>
+            KI-Ausbildung
           </div>
-          <div class="card__label" style="flex-shrink:0;">KI-Ausbildung</div>
+          <div class="fmt__tag">Mehrere Module · Inhouse oder hybrid · über Monate</div>
+          <h2 class="fmt__h2" id="f5-title">Tiefes Wissen.<br>Nachhaltig aufgebaut.</h2>
+          <p class="fmt__for">Für: Unternehmen, die KI-Kompetenz strukturiert und dauerhaft aufbauen wollen</p>
+          <p class="fmt__body">
+            Ein maßgeschneidertes Ausbildungsprogramm über mehrere Monate. Wir definieren gemeinsam die Lernziele, entwickeln Inhalte, die zu Ihrer Branche und Ihren Prozessen passen – und begleiten den Aufbau über die Zeit.
+          </p>
+          <div class="fmt__chips">
+            <span>Grundlagenmodule</span>
+            <span>Abteilungsspezifische Anwendungen</span>
+            <span>Transfer &amp; Peer Learning</span>
+            <span>Optional: KI Champions</span>
+          </div>
+          <div class="fmt__result">
+            <strong>Ergebnis</strong>
+            <p>KI-Kompetenz, die bleibt. Nicht ein Workshop, der in drei Wochen vergessen ist.</p>
+          </div>
+          <a href="./kontakt.html?format=ausbildung" class="btn btn--primary">Konzept besprechen</a>
         </div>
-        <p class="format-block__body">
-          Ein maßgeschneidertes Ausbildungsprogramm über mehrere Monate. Wir definieren gemeinsam die Lernziele, entwickeln Inhalte, die zu Ihrer Branche und Ihren Prozessen passen – und begleiten den Aufbau über die Zeit.
-        </p>
-        <p style="font-weight:700;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px;">Mögliche Bestandteile</p>
-        <ul class="format-block__list">
-          <li>Grundlagenmodule für verschiedene Levels</li>
-          <li>Anwendungsfallentwicklung für spezifische Abteilungen</li>
-          <li>Transfer-Aufgaben und Peer Learning</li>
-          <li>Optionale Verbindung mit dem KI Champions Programm</li>
-        </ul>
-        <div class="format-block__result">
-          <strong>Ergebnis</strong>
-          KI-Kompetenz, die bleibt. Nicht ein Workshop, der in drei Wochen vergessen ist.
-        </div>
-        <a href="./kontakt.html?format=ausbildung" class="btn btn--primary">Konzept besprechen</a>
       </div>
     </section>
 
-    <!-- KEYNOTES EXTERN -->
-    <section class="section--dark" id="keynotes" aria-labelledby="keynote-title">
-      <div class="section__inner">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="responsive-stack">
-          <div>
-            <span class="eyebrow eyebrow--light">Externe Events</span>
-            <h2 class="section__title section__title--light" id="keynote-title">Auf der Bühne.</h2>
-            <p class="section__lead section__lead--light">
-              Ein guter Vortrag verändert, wie Menschen über ein Thema denken. Ich spreche auf Konferenzen, Unternehmensveranstaltungen und Fachevents – auf Deutsch und Englisch. Nicht als Technik-Show. Sondern als echte Auseinandersetzung mit dem, was KI für Menschen und Organisationen bedeutet.
-            </p>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;">
-              <span style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:0.8125rem;font-weight:600;padding:6px 14px;border-radius:4px;">KI und Unternehmenskultur</span>
-              <span style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:0.8125rem;font-weight:600;padding:6px 14px;border-radius:4px;">Führen im KI-Zeitalter</span>
-              <span style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:0.8125rem;font-weight:600;padding:6px 14px;border-radius:4px;">KI-Kompetenz als strategisches Thema</span>
-              <span style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:0.8125rem;font-weight:600;padding:6px 14px;border-radius:4px;">Was KI wirklich verändert</span>
+    <!-- ── EXTERNE KEYNOTES ── -->
+    <section class="keynote-dark fade-in" id="keynotes" aria-labelledby="keynote-title">
+      <div class="keynote-dark__inner">
+        <div>
+          <span class="eyebrow eyebrow--light">Externe Events</span>
+          <h2 class="section__title section__title--light" id="keynote-title" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.025em;margin-bottom:20px;">
+            Auf der Bühne.
+          </h2>
+          <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:28px;max-width:520px;">
+            Ein guter Vortrag verändert, wie Menschen über ein Thema denken. Ich spreche auf Konferenzen, Unternehmensveranstaltungen und Fachevents – auf Deutsch und Englisch. Nicht als Technik-Show, sondern als echte Auseinandersetzung mit dem, was KI für Menschen und Organisationen bedeutet.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;">
+            <span class="keynote-chip">KI und Unternehmenskultur</span>
+            <span class="keynote-chip">Führen im KI-Zeitalter</span>
+            <span class="keynote-chip">KI-Kompetenz als Strategiethema</span>
+            <span class="keynote-chip">Was KI wirklich verändert</span>
+          </div>
+          <div class="cred-row">
+            <div class="cred-item">
+              <span class="cred-label">Auszeichnung</span>
+              <span class="cred-value">Forbes 30 Under 30 Europe 2023</span>
             </div>
-            <a href="./kontakt.html?format=keynote" class="btn btn--white btn--lg">Keynote anfragen</a>
-          </div>
-          <div>
-            <div style="display:flex;flex-direction:column;gap:20px;">
-              <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px 28px;border:1px solid rgba(255,255,255,0.12);">
-                <div style="font-weight:800;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:8px;">Auszeichnung</div>
-                <div style="font-weight:700;font-size:1rem;color:#fff;">Forbes 30 Under 30 Europe 2023</div>
-              </div>
-              <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px 28px;border:1px solid rgba(255,255,255,0.12);">
-                <div style="font-weight:800;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:8px;">Akademisch</div>
-                <div style="font-weight:700;font-size:1rem;color:#fff;">Lehrbeauftragte an österr. Hochschulen</div>
-              </div>
-              <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px 28px;border:1px solid rgba(255,255,255,0.12);">
-                <div style="font-weight:800;font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--unb-steel);margin-bottom:8px;">Medien</div>
-                <div style="font-weight:700;font-size:1rem;color:#fff;">Kolumnistin zu KI, Kultur &amp; Leadership</div>
-              </div>
+            <div class="cred-item">
+              <span class="cred-label">Akademisch</span>
+              <span class="cred-value">Lehrbeauftragte an österr. Hochschulen</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-label">Medien</span>
+              <span class="cred-value">Kolumnistin zu KI, Kultur &amp; Leadership</span>
             </div>
           </div>
+          <a href="./kontakt.html?format=keynote" class="btn btn--white btn--lg">Keynote anfragen</a>
+        </div>
+        <div class="keynote-dark__img">
+          <img src="./assets/img/Keynote.png" alt="Lisa Höllbacher als Keynote Speakerin auf der Bühne" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- ABSCHLUSS QUOTE -->
-    <section class="section" style="padding-top:80px;padding-bottom:80px;">
-      <div style="max-width:760px;margin:0 auto;">
-        <blockquote class="pull-quote">
-          <p class="pull-quote__text">„Technologischer Wandel beginnt mit Menschen. Nicht mit Tools."</p>
-          <footer class="pull-quote__author">— Lisa Höllbacher</footer>
+    <!-- ── QUOTE MIT BILD ── -->
+    <div class="quote-visual">
+      <div class="quote-visual__bg" aria-hidden="true">
+        <img src="./assets/img/Thomsen Photography-01. Oktober 2024-8.jpg" alt="">
+      </div>
+      <div class="quote-visual__overlay" aria-hidden="true"></div>
+      <div class="quote-visual__inner">
+        <blockquote>
+          <p class="quote-visual__text">„Technologischer Wandel beginnt mit Menschen. Nicht mit Tools."</p>
+          <footer class="quote-visual__author">— Lisa Höllbacher</footer>
         </blockquote>
       </div>
-    </section>
+    </div>
 
-    <!-- CTA -->
+    <!-- ── CTA ── -->
     <section class="cta-banner" aria-labelledby="formats-cta-title">
       <div class="cta-banner__inner">
         <h2 class="cta-banner__title" id="formats-cta-title">Das richtige Format für Ihre Situation.</h2>
@@ -251,7 +554,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="site-footer__inner">
       <div>
@@ -307,7 +609,7 @@
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
