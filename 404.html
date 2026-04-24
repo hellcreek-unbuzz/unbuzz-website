@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden | Unbuzz Consulting</title>
+  <meta name="description" content="Diese Seite existiert nicht – aber die richtige Seite ist nicht weit.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="./index.html" class="site-header__brand" aria-label="Unbuzz Consulting – Startseite">
+        <img src="./assets/img/logo.png" alt="Unbuzz Consulting Logo" >
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-header__nav" id="main-nav" role="navigation" aria-label="Hauptnavigation">
+        <a href="./index.html">Home</a>
+        <a href="./formate.html">Formate</a>
+        <a href="./ki-champions.html">KI Champions</a>
+        <a href="./beratung.html">Beratung</a>
+        <a href="./about.html">About</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </nav>
+      <a href="./kontakt.html" class="btn btn--primary site-header__cta">Gespräch anfragen</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="not-found">
+      <div class="not-found__num" aria-hidden="true">404</div>
+      <h1 class="not-found__title">Diese Seite gibt es nicht.</h1>
+      <p class="not-found__body">Kein Buzzword, kein Hype – nur eine Seite, die fehlt. Die richtige ist nicht weit.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="./index.html" class="btn btn--primary btn--lg">Zur Startseite</a>
+        <a href="./kontakt.html" class="btn btn--outline btn--lg">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__bottom" style="max-width:var(--max-w);margin:0 auto;padding-top:0;border-top:none;">
+      <span class="site-footer__legal">&copy; 2025 Unbuzz Consulting · Lisa Höllbacher</span>
+      <div class="site-footer__links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-header__nav');
+    const cta = document.querySelector('.site-header__cta');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        if (cta) cta.classList.toggle('open', open);
+      });
+    }
+  </script>
+
+</body>
+</html>

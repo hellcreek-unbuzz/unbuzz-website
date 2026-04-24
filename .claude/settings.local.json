@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/lisahollbacher/Downloads/**)",
+      "Bash(unzip -o \"Unbuzz Design System.zip\" -d /tmp/unbuzz-design)",
+      "Bash(cp '/tmp/unbuzz-design/fonts/*.woff2' '/Users/lisahollbacher/Library/CloudStorage/GoogleDrive-lisa@unbuzz-consulting.com/Meine Ablage/Website Neu Claude _v2/assets/fonts/')",
+      "Bash(cp /tmp/unbuzz-design/assets/unbuzz-logo.png '/Users/lisahollbacher/Library/CloudStorage/GoogleDrive-lisa@unbuzz-consulting.com/Meine Ablage/Website Neu Claude _v2/assets/img/logo.png')",
+      "Bash(cp '/tmp/unbuzz-design/uploads/Logo Unbuzz Consulting.png' '/Users/lisahollbacher/Library/CloudStorage/GoogleDrive-lisa@unbuzz-consulting.com/Meine Ablage/Website Neu Claude _v2/assets/img/logo-full.png')"
+    ]
+  }
+}
