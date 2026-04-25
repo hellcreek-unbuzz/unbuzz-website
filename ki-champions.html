@@ -13,6 +13,10 @@
   <meta property="og:site_name" content="Unbuzz Consulting">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://unbuzz-consulting.com/ki-champions.html">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/img/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="application/ld+json">
   {
@@ -375,35 +379,79 @@
 
     <!-- FÜR WEN -->
     <section class="section--soft" aria-labelledby="fuerwen-title">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="responsive-stack">
-        <div>
-          <span class="eyebrow">Für wen</span>
-          <h2 class="section__title" id="fuerwen-title">Das Programm passt zu Ihnen, wenn&hellip;</h2>
-          <div style="display:flex;flex-direction:column;gap:20px;margin-top:8px;">
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
-              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine Fokusgruppe im Unternehmen haben, die KI aktiv mitgestalten will – und die Sichtbarkeit und Ausbildung verdient.</p>
+      <div class="section__inner">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="responsive-stack">
+          <div>
+            <span class="eyebrow">Für wen</span>
+            <h2 class="section__title" id="fuerwen-title">Das Programm passt zu Ihnen, wenn&hellip;</h2>
+            <div style="display:flex;flex-direction:column;gap:20px;margin-top:8px;">
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+                <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine Fokusgruppe im Unternehmen haben, die KI aktiv mitgestalten will – und die Sichtbarkeit und Ausbildung verdient.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+                <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine KI-Einführung planen, die nicht als IT-Projekt scheitert, sondern als kultureller Wandel gelingt.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
+                <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie wissen, dass nachhaltige Veränderung nicht von oben verordnet werden kann – sondern von Menschen getragen werden muss.</p>
+              </div>
             </div>
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
-              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie eine KI-Einführung planen, die nicht als IT-Projekt scheitert, sondern als kultureller Wandel gelingt.</p>
-            </div>
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:8px;height:8px;border-radius:50%;background:var(--unb-navy);flex-shrink:0;margin-top:7px;"></div>
-              <p style="font-size:1rem;color:var(--fg-2);line-height:1.65;margin:0;">Sie wissen, dass nachhaltige Veränderung nicht von oben verordnet werden kann – sondern von Menschen getragen werden muss.</p>
+            <div style="margin-top:36px;">
+              <a href="./kontakt.html?format=champions" class="btn btn--primary btn--lg">Programm anfragen</a>
             </div>
           </div>
-          <div style="margin-top:36px;">
-            <a href="./kontakt.html?format=champions" class="btn btn--primary btn--lg">Programm anfragen</a>
-          </div>
-        </div>
-        <div>
-          <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3;">
-            <img src="./assets/img/Keynote Speaker.jpg" alt="Lisa Höllbacher im Einsatz" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;" loading="lazy">
+
+          <!-- Keynote Carousel -->
+          <div>
+            <div class="keynote-carousel" id="keynoteCarousel" style="border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative;">
+              <div class="kc-slide kc-slide--active">
+                <img src="./assets/img/Keynote Speaker.jpg" alt="Lisa Höllbacher als Keynote Speaker" loading="lazy">
+              </div>
+              <div class="kc-slide">
+                <img src="./assets/img/Thomsen Photography-01. Oktober 2024-15.jpg" alt="Lisa Höllbacher" loading="lazy">
+              </div>
+              <div class="kc-slide">
+                <img src="./assets/img/Thomsen Photography-01. Oktober 2024-8.jpg" alt="Lisa Höllbacher" loading="lazy">
+              </div>
+              <div class="kc-slide">
+                <img src="./assets/img/Thomsen Photography-01. Oktober 2024-13.jpg" alt="Lisa Höllbacher" loading="lazy">
+              </div>
+              <div class="kc-dots" aria-hidden="true">
+                <span class="kc-dot kc-dot--active"></span>
+                <span class="kc-dot"></span>
+                <span class="kc-dot"></span>
+                <span class="kc-dot"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <style>
+      .kc-slide { position:absolute;inset:0;opacity:0;transition:opacity 700ms ease; }
+      .kc-slide img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block; }
+      .kc-slide--active { opacity:1; }
+      .kc-dots { position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2; }
+      .kc-dot { width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);transition:background 300ms; }
+      .kc-dot--active { background:#fff; }
+    </style>
+    <script>
+      (function(){
+        var slides = document.querySelectorAll('#keynoteCarousel .kc-slide');
+        var dots   = document.querySelectorAll('#keynoteCarousel .kc-dot');
+        var cur = 0;
+        function goTo(n) {
+          slides[cur].classList.remove('kc-slide--active');
+          dots[cur].classList.remove('kc-dot--active');
+          cur = (n + slides.length) % slides.length;
+          slides[cur].classList.add('kc-slide--active');
+          dots[cur].classList.add('kc-dot--active');
+        }
+        setInterval(function(){ goTo(cur + 1); }, 3500);
+      })();
+    </script>
 
     <!-- WAS AM ENDE STEHT -->
     <section class="section--dark" aria-labelledby="ergebnis-title">
