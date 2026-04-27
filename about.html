@@ -235,14 +235,25 @@
     </section>
 
     <!-- BLOCK: PUBLIKATIONEN -->
+    <style>
+      .pub-nav { display:flex; align-items:center; justify-content:space-between; margin-top:32px; gap:16px; }
+      .pub-nav__btn { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--border-1); background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 160ms, border-color 160ms; flex-shrink:0; }
+      .pub-nav__btn:hover:not(:disabled) { background:var(--unb-navy); border-color:var(--unb-navy); }
+      .pub-nav__btn:hover:not(:disabled) svg { stroke:#fff; }
+      .pub-nav__btn:disabled { opacity:0.3; cursor:default; }
+      .pub-nav__btn svg { width:18px; height:18px; stroke:var(--fg-1); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:stroke 160ms; }
+      .pub-dots { display:flex; gap:8px; align-items:center; }
+      .pub-dot { width:8px; height:8px; border-radius:50%; background:var(--border-1); border:none; cursor:pointer; padding:0; transition:background 200ms, transform 200ms; }
+      .pub-dot--active { background:var(--unb-navy); transform:scale(1.25); }
+    </style>
     <section class="section" aria-labelledby="pub-title">
       <div class="section__inner">
         <span class="eyebrow">Publications &amp; Commentary</span>
         <h2 class="section__title" id="pub-title" style="margin-bottom:40px;">Veröffentlichungen &amp; Beiträge</h2>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="responsive-2">
+        <div id="pub-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="responsive-2">
 
           <!-- Springer -->
-          <a href="https://www.springerprofessional.de/management-guide-digitaler-humanismus/51980082" target="_blank" rel="noopener noreferrer" class="article-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+          <a href="https://www.springerprofessional.de/management-guide-digitaler-humanismus/51980082" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
             <div style="background:var(--unb-navy);border-radius:8px 8px 0 0;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:-1px -1px 0;padding:24px;">
               <span style="font-size:0.625rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Springer Fachmedien</span>
               <span style="font-size:1rem;font-weight:800;color:#fff;text-align:center;line-height:1.3;">Management Guide<br>Digitaler Humanismus</span>
@@ -255,7 +266,7 @@
           </a>
 
           <!-- Rheinwerk -->
-          <a href="https://www.rheinwerk-verlag.de/ki-mindset-fuer-deine-fotografie/" target="_blank" rel="noopener noreferrer" class="article-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+          <a href="https://www.rheinwerk-verlag.de/ki-mindset-fuer-deine-fotografie/" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
             <div style="border-radius:8px 8px 0 0;height:160px;overflow:hidden;margin:-1px -1px 0;background:#111;">
               <img src="https://s3-eu-west-1.amazonaws.com/cover2.galileo-press.de/print/9783367111046_267.png" alt="KI-Mindset für deine Fotografie – Rheinwerk Verlag" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
             </div>
@@ -267,7 +278,7 @@
           </a>
 
           <!-- trend -->
-          <a href="https://www.trend.at/autoren/lisa-hollbacher" target="_blank" rel="noopener noreferrer" class="article-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+          <a href="https://www.trend.at/autoren/lisa-hollbacher" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
             <div style="background:linear-gradient(135deg,#c0392b,#922b21);border-radius:8px 8px 0 0;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:-1px -1px 0;padding:24px;">
               <span style="font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">trend.</span>
               <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);text-align:center;">Wirtschaftsmagazin</span>
@@ -280,7 +291,7 @@
           </a>
 
           <!-- Kommunal -->
-          <a href="https://kommunal.at/ki-hotspots-im-globalen-vergleich" target="_blank" rel="noopener noreferrer" class="article-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+          <a href="https://kommunal.at/ki-hotspots-im-globalen-vergleich" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
             <div style="border-radius:8px 8px 0 0;height:160px;overflow:hidden;margin:-1px -1px 0;background:#1a3a5c;position:relative;">
               <img src="https://kommunal.at/sites/default/files/styles/header_10x4_900/public/2025-07/AdobeStock_1536964617.jpg.webp?itok=0SfmyIOK" alt="KI Hotspots im globalen Vergleich" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5),transparent);"></div>
@@ -292,7 +303,61 @@
             </div>
           </a>
 
+          <!-- Forbes.at -->
+          <a href="https://www.forbes.at/artikel/lisa-hoellbacher" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+            <div style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d);border-radius:8px 8px 0 0;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin:-1px -1px 0;padding:24px;">
+              <span style="font-size:1.75rem;font-weight:900;color:#fff;letter-spacing:-0.02em;font-family:Georgia,serif;">Forbes</span>
+              <span style="font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Österreich</span>
+            </div>
+            <div style="padding:20px 20px 16px;">
+              <div class="article-card__meta"><span class="article-card__tag">Porträt</span><span class="article-card__date">2023</span></div>
+              <h3 class="article-card__title">Forbes 30 Under 30 Europe – Lisa Höllbacher</h3>
+              <div class="article-card__foot"><span>Forbes Österreich</span><span class="article-card__arr">→</span></div>
+            </div>
+          </a>
+
+          <!-- YouTube – Next Generation Award Interview -->
+          <a href="https://www.youtube.com/watch?v=BzYY4bnK_qY" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+            <div style="background:linear-gradient(135deg,#1a1a1a,#111);border-radius:8px 8px 0 0;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin:-1px -1px 0;padding:24px;position:relative;overflow:hidden;">
+              <div style="width:52px;height:52px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+              <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);">YouTube Interview</span>
+            </div>
+            <div style="padding:20px 20px 16px;">
+              <div class="article-card__meta"><span class="article-card__tag">Video</span><span class="article-card__date">2024</span></div>
+              <h3 class="article-card__title">Next Generation Award: Lisa Höllbacher im Interview</h3>
+              <div class="article-card__foot"><span>YouTube</span><span class="article-card__arr">→</span></div>
+            </div>
+          </a>
+
+          <!-- Kitzbühel Digital – Speaking Event -->
+          <a href="https://www.kitzbuehel.digital/events/digitale-zukunft" target="_blank" rel="noopener noreferrer" class="article-card pub-card fade-in" style="text-decoration:none;display:flex;flex-direction:column;">
+            <div style="background:linear-gradient(135deg,#1c3d5a,#2a5a7a);border-radius:8px 8px 0 0;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:-1px -1px 0;padding:24px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              <span style="font-size:0.9375rem;font-weight:800;color:#fff;letter-spacing:-0.01em;">Kitzbühel Digital</span>
+              <span style="font-size:0.6875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Digitale Zukunft</span>
+            </div>
+            <div style="padding:20px 20px 16px;">
+              <div class="article-card__meta"><span class="article-card__tag">Vortrag</span><span class="article-card__date">2026</span></div>
+              <h3 class="article-card__title">KI, Gesellschaft & Wandel – Impulsvortrag & Podiumsdiskussion</h3>
+              <div class="article-card__foot"><span>Kitzbühel Digital</span><span class="article-card__arr">→</span></div>
+            </div>
+          </a>
+
         </div>
+
+        <!-- Slider Navigation -->
+        <div class="pub-nav" role="navigation" aria-label="Publikationen blättern">
+          <button class="pub-nav__btn" id="pub-prev" aria-label="Zurück" disabled>
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="pub-dots" id="pub-dots"></div>
+          <button class="pub-nav__btn" id="pub-next" aria-label="Weiter">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -425,6 +490,44 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Publications slider
+    (function() {
+      const PER_PAGE = 4;
+      const cards = Array.from(document.querySelectorAll('.pub-card'));
+      const dotsEl = document.getElementById('pub-dots');
+      const prevBtn = document.getElementById('pub-prev');
+      const nextBtn = document.getElementById('pub-next');
+      if (!cards.length || !dotsEl) return;
+
+      const pages = Math.ceil(cards.length / PER_PAGE);
+      let cur = 0;
+
+      // Build dots
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('button');
+        d.className = 'pub-dot' + (i === 0 ? ' pub-dot--active' : '');
+        d.setAttribute('aria-label', 'Seite ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+      }
+
+      function goTo(p) {
+        cur = Math.max(0, Math.min(p, pages - 1));
+        cards.forEach((c, i) => {
+          const show = i >= cur * PER_PAGE && i < (cur + 1) * PER_PAGE;
+          c.style.display = show ? 'flex' : 'none';
+          if (show) { c.classList.remove('visible'); requestAnimationFrame(() => { observer.observe(c); }); }
+        });
+        dotsEl.querySelectorAll('.pub-dot').forEach((d, i) => d.classList.toggle('pub-dot--active', i === cur));
+        prevBtn.disabled = cur === 0;
+        nextBtn.disabled = cur === pages - 1;
+      }
+
+      prevBtn.addEventListener('click', () => goTo(cur - 1));
+      nextBtn.addEventListener('click', () => goTo(cur + 1));
+      goTo(0);
+    })();
   </script>
 
 </body>
